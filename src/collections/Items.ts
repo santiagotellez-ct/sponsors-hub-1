@@ -26,6 +26,7 @@ export const Items: CollectionConfig = {
       type: 'select',
       required: true,
       defaultValue: 'none',
+      dbName: 'item_deliverable_type_enum',
       options: [
         { label: 'Texto', value: 'text' },
         { label: 'Imagen', value: 'image' },

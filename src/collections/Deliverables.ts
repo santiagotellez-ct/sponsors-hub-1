@@ -33,6 +33,7 @@ export const Deliverables: CollectionConfig = {
       type: 'select',
       required: true,
       defaultValue: 'bloqueado',
+      dbName: 'deliverable_status_enum',
       options: [
         { label: 'Bloqueado', value: 'bloqueado' },
         { label: 'Pendiente', value: 'pendiente' },

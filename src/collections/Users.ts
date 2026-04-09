@@ -19,6 +19,7 @@ export const Users: CollectionConfig = {
       type: 'select',
       required: true,
       defaultValue: 'sponsor',
+      dbName: 'user_role_enum',
       options: [
         { label: 'Admin', value: 'admin' },
         { label: 'Sponsor', value: 'sponsor' },

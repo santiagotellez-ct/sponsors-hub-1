@@ -48,6 +48,7 @@ export const Meetings: CollectionConfig = {
       type: 'select',
       required: true,
       defaultValue: 'proxima',
+      dbName: 'meeting_status_enum',
       options: [
         { label: 'Próxima', value: 'proxima' },
         { label: 'Pasada', value: 'pasada' },
