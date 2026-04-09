@@ -2,10 +2,10 @@ import type { CollectionConfig } from 'payload'
 
 export const Users: CollectionConfig = {
   slug: 'users',
+  auth: true,
   admin: {
     useAsTitle: 'email',
   },
-  auth: true,
   access: {
     read: () => true,
     create: () => true,
@@ -27,62 +27,34 @@ export const Users: CollectionConfig = {
       name: 'assignedEvent',
       type: 'relationship',
       relationTo: 'events',
-      admin: {
-        condition: (data) => data.role === 'sponsor',
-      },
+      hasMany: false,
     },
     {
       name: 'assignedPlan',
       type: 'relationship',
       relationTo: 'plans',
-      admin: {
-        condition: (data) => data.role === 'sponsor',
-      },
+      hasMany: false,
     },
     {
-      name: 'sponsorDetails',
+      name: 'sponsorData',
       type: 'group',
       admin: {
         condition: (data) => data.role === 'sponsor',
       },
       fields: [
-        {
-          name: 'fullName',
-          type: 'text',
-        },
-        {
-          name: 'companyName',
-          type: 'text',
-        },
-        {
-          name: 'whatsappNumbers',
-          label: 'Celular/WhatsApp',
-          type: 'text',
-        },
-        {
-          name: 'corporateEmail',
-          type: 'email',
-        },
-        {
-          name: 'linkedin',
-          type: 'text',
-        },
-        {
-          name: 'companyDescription',
-          type: 'textarea',
-        },
-        {
-          name: 'eventObjectives',
-          type: 'textarea',
-        },
-        {
-          name: 'brandDifferentiator',
-          type: 'textarea',
-        },
-        {
-          name: 'logo',
-          type: 'upload',
+        { name: 'fullName', type: 'text', label: 'Nombre completo' },
+        { name: 'companyName', type: 'text', label: 'Nombre de la empresa' },
+        { name: 'phone', type: 'text', label: 'Celular/WhatsApp' },
+        { name: 'corporateEmail', type: 'email', label: 'Email corporativo' },
+        { name: 'linkedin', type: 'text', label: 'LinkedIn' },
+        { name: 'companyDescription', type: 'textarea', label: 'Descripción de la compañía' },
+        { name: 'eventGoals', type: 'textarea', label: 'Objetivos del evento' },
+        { name: 'brandDifferentiator', type: 'textarea', label: 'Diferenciador de marca' },
+        { 
+          name: 'logo', 
+          type: 'relationship', 
           relationTo: 'media',
+          label: 'Logo'
         },
       ],
     },

@@ -12,18 +12,11 @@ export const Items: CollectionConfig = {
     delete: () => true,
   },
   fields: [
-    {
-      name: 'name',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'description',
-      type: 'textarea',
-    },
-    {
-      name: 'deliverableType',
-      type: 'select',
+    { name: 'name', type: 'text', required: true, label: 'Name' },
+    { name: 'description', type: 'textarea', label: 'Description' },
+    { 
+      name: 'deliverableType', 
+      type: 'select', 
       options: [
         { label: 'Text', value: 'text' },
         { label: 'Image', value: 'image' },
@@ -31,6 +24,7 @@ export const Items: CollectionConfig = {
         { label: 'None', value: 'none' },
       ],
       required: true,
+      label: 'Deliverable Type'
     },
   ],
 }

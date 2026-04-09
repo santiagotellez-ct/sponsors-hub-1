@@ -12,20 +12,14 @@ export const Plans: CollectionConfig = {
     delete: () => true,
   },
   fields: [
-    {
-      name: 'name',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'perksDiscount',
-      type: 'number',
-    },
-    {
-      name: 'benefits',
-      type: 'relationship',
-      relationTo: 'benefits',
+    { name: 'name', type: 'text', required: true, label: 'Name' },
+    { name: 'perksDiscount', type: 'number', label: 'Perks Discount (%)' },
+    { 
+      name: 'benefits', 
+      type: 'relationship', 
+      relationTo: 'benefits', 
       hasMany: true,
+      label: 'Benefits'
     },
   ],
 }

@@ -12,16 +12,13 @@ export const Benefits: CollectionConfig = {
     delete: () => true,
   },
   fields: [
-    {
-      name: 'name',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'items',
-      type: 'relationship',
-      relationTo: 'items',
+    { name: 'name', type: 'text', required: true, label: 'Name' },
+    { 
+      name: 'items', 
+      type: 'relationship', 
+      relationTo: 'items', 
       hasMany: true,
+      label: 'Items'
     },
   ],
 }

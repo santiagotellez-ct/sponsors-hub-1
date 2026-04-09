@@ -12,20 +12,8 @@ export const Events: CollectionConfig = {
     delete: () => true,
   },
   fields: [
-    {
-      name: 'title',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'startDate',
-      type: 'date',
-      required: true,
-    },
-    {
-      name: 'endDate',
-      type: 'date',
-      required: true,
-    },
+    { name: 'title', type: 'text', required: true, label: 'Title' },
+    { name: 'startDate', type: 'date', required: true, label: 'Start Date' },
+    { name: 'endDate', type: 'date', required: true, label: 'End Date' },
   ],
 }

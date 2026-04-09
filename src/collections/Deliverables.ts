@@ -9,21 +9,23 @@ export const Deliverables: CollectionConfig = {
     delete: () => true,
   },
   fields: [
-    {
-      name: 'sponsor',
-      type: 'relationship',
+    { 
+      name: 'sponsor', 
+      type: 'relationship', 
       relationTo: 'users',
       required: true,
+      label: 'Sponsor'
     },
-    {
-      name: 'item',
-      type: 'relationship',
+    { 
+      name: 'item', 
+      type: 'relationship', 
       relationTo: 'items',
       required: true,
+      label: 'Item'
     },
-    {
-      name: 'status',
-      type: 'select',
+    { 
+      name: 'status', 
+      type: 'select', 
       options: [
         { label: 'Bloqueado', value: 'bloqueado' },
         { label: 'Pendiente', value: 'pendiente' },
@@ -32,15 +34,14 @@ export const Deliverables: CollectionConfig = {
       ],
       defaultValue: 'bloqueado',
       required: true,
+      label: 'Status'
     },
-    {
-      name: 'file',
-      type: 'upload',
-      relationTo: 'media',
+    { 
+      name: 'file', 
+      type: 'relationship', 
+      relationTo: 'media', 
+      label: 'File'
     },
-    {
-      name: 'notes',
-      type: 'textarea',
-    },
+    { name: 'notes', type: 'textarea', label: 'Notes' },
   ],
 }

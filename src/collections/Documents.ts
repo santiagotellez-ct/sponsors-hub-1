@@ -12,22 +12,20 @@ export const Documents: CollectionConfig = {
     delete: () => true,
   },
   fields: [
-    {
-      name: 'title',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'file',
-      type: 'upload',
+    { name: 'title', type: 'text', required: true, label: 'Title' },
+    { 
+      name: 'file', 
+      type: 'relationship', 
       relationTo: 'media',
       required: true,
+      label: 'File'
     },
-    {
-      name: 'sponsor',
-      type: 'relationship',
+    { 
+      name: 'sponsor', 
+      type: 'relationship', 
       relationTo: 'users',
       required: true,
+      label: 'Sponsor'
     },
   ],
 }

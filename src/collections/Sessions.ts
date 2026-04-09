@@ -12,35 +12,25 @@ export const Sessions: CollectionConfig = {
     delete: () => true,
   },
   fields: [
-    {
-      name: 'title',
-      type: 'text',
-      required: true,
-    },
-    {
-      name: 'date',
-      type: 'date',
-      required: true,
-    },
-    {
-      name: 'meetingLink',
-      type: 'text',
-    },
-    {
-      name: 'sponsor',
-      type: 'relationship',
+    { name: 'title', type: 'text', required: true, label: 'Title' },
+    { name: 'date', type: 'date', required: true, label: 'Date' },
+    { name: 'meetingLink', type: 'text', label: 'Meeting Link' },
+    { 
+      name: 'sponsor', 
+      type: 'relationship', 
       relationTo: 'users',
       required: true,
+      label: 'Sponsor'
     },
-    {
-      name: 'status',
-      type: 'select',
+    { 
+      name: 'status', 
+      type: 'select', 
       options: [
         { label: 'Próxima', value: 'proxima' },
         { label: 'Pasada', value: 'pasada' },
       ],
-      defaultValue: 'proxima',
       required: true,
+      label: 'Status'
     },
   ],
 }
