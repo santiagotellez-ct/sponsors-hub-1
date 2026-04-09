@@ -35,7 +35,7 @@ export default buildConfig({
   plugins: [
     s3Storage({
       collections: {
-        media: true, // Habilita S3 para la colección Media
+        media: true, 
       },
       bucket: process.env.S3_BUCKET as string,
       config: {
@@ -43,9 +43,9 @@ export default buildConfig({
           accessKeyId: process.env.S3_ACCESS_KEY_ID as string,
           secretAccessKey: process.env.S3_SECRET_ACCESS_KEY as string,
         },
-        region: process.env.S3_REGION,
-        endpoint: process.env.S3_ENDPOINT,
-        forcePathStyle: true, // Esto es vital para que Supabase Storage funcione
+        region: process.env.S3_REGION as string, // Asegúrate de tener "as string"
+        endpoint: process.env.S3_ENDPOINT as string, // Asegúrate de tener "as string"
+        forcePathStyle: true, // ¡ESTO ES CRUCIAL PARA SUPABASE!
       },
     }),
   ],
