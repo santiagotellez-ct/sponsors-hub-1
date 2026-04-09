@@ -4,7 +4,6 @@ export const Sessions: CollectionConfig = {
   slug: 'sessions',
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'sponsor', 'date', 'status'],
   },
   access: {
     read: () => true,

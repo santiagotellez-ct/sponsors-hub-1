@@ -4,7 +4,6 @@ export const Documents: CollectionConfig = {
   slug: 'documents',
   admin: {
     useAsTitle: 'title',
-    defaultColumns: ['title', 'sponsor', 'createdAt'],
   },
   access: {
     read: () => true,
