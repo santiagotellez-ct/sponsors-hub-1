@@ -12,7 +12,7 @@ import { Items } from './collections/Items'
 import { Benefits } from './collections/Benefits'
 import { Plans } from './collections/Plans'
 import { Deliverables } from './collections/Deliverables'
-import { Sessions } from './collections/Sessions'
+import { Meetings } from './collections/Meetings'
 import { Documents } from './collections/Documents'
 
 const filename = fileURLToPath(import.meta.url)
@@ -33,7 +33,7 @@ export default buildConfig({
     Benefits,
     Plans,
     Deliverables,
-    Sessions,
+    Meetings,
     Documents,
   ],
   editor: lexicalEditor(),

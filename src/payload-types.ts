@@ -74,7 +74,7 @@ export interface Config {
     benefits: Benefit;
     plans: Plan;
     deliverables: Deliverable;
-    sessions: Session;
+    meetings: Meeting;
     documents: Document;
     'payload-kv': PayloadKv;
     'payload-locked-documents': PayloadLockedDocument;
@@ -90,7 +90,7 @@ export interface Config {
     benefits: BenefitsSelect<false> | BenefitsSelect<true>;
     plans: PlansSelect<false> | PlansSelect<true>;
     deliverables: DeliverablesSelect<false> | DeliverablesSelect<true>;
-    sessions: SessionsSelect<false> | SessionsSelect<true>;
+    meetings: MeetingsSelect<false> | MeetingsSelect<true>;
     documents: DocumentsSelect<false> | DocumentsSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
@@ -297,9 +297,9 @@ export interface Deliverable {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "sessions".
+ * via the `definition` "meetings".
  */
-export interface Session {
+export interface Meeting {
   id: number;
   title: string;
   date: string;
@@ -386,8 +386,8 @@ export interface PayloadLockedDocument {
         value: number | Deliverable;
       } | null)
     | ({
-        relationTo: 'sessions';
-        value: number | Session;
+        relationTo: 'meetings';
+        value: number | Meeting;
       } | null)
     | ({
         relationTo: 'documents';
@@ -549,9 +549,9 @@ export interface DeliverablesSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "sessions_select".
+ * via the `definition` "meetings_select".
  */
-export interface SessionsSelect<T extends boolean = true> {
+export interface MeetingsSelect<T extends boolean = true> {
   title?: T;
   date?: T;
   meetingLink?: T;
