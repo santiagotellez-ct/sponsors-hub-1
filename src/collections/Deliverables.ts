@@ -2,9 +2,7 @@ import type { CollectionConfig } from 'payload'
 
 export const Deliverables: CollectionConfig = {
   slug: 'deliverables',
-  admin: {
-    defaultColumns: ['sponsor', 'item', 'status', 'updatedAt'],
-  },
+  admin: {},
   access: {
     read: () => true,
     create: () => true,
